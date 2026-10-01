@@ -32,20 +32,26 @@ body:
   - type: textarea
     id: incorrect
     attributes:
-      label: Incorrect interpretation
-      description: Did the audit misunderstand any source-system semantics?
+      label: Incorrect or missing context
+      description: Did the audit misunderstand any source-system semantics or omit context that changes the interpretation?
+
+  - type: textarea
+    id: next_experiment
+    attributes:
+      label: Is the suggested next experiment useful?
+      description: Would the duplicate-candidate/reranking observation be worth testing, or is there a better hypothesis?
 
   - type: textarea
     id: time_saved
     attributes:
-      label: Would this save time?
-      description: Would this audit materially reduce debugging or evaluation effort?
+      label: Practical value
+      description: Would this kind of external audit materially reduce debugging or evaluation effort?
 
   - type: textarea
     id: paid
     attributes:
-      label: What would a paid version require?
-      description: What additional evidence or output would make this worth paying for?
+      label: Optional commercial signal
+      description: What additional evidence or output, if any, would make an external audit like this worth paying for?
 
   - type: checkboxes
     id: permission
