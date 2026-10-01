@@ -1,7 +1,9 @@
 # Checksums
 
-The local beta package was built and validated successfully.
+The local beta delivery package was built and validated successfully.
 
-Before publishing the complete audit mirror, copy the validated `SHA256SUMS.txt` from the delivery package into this directory.
+**Public mirror status:** the canonical checksum file has not yet been copied into this repository.
 
-Do not regenerate historical audit artifacts merely to make hashes convenient. The public mirror should match the validated package bytes.
+The validated `SHA256SUMS.txt` should be copied from the original delivery package, not regenerated from reconstructed artifacts.
+
+This preserves a simple rule: published machine artifacts must match the bytes that were actually validated.
