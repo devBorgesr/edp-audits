@@ -1,0 +1,56 @@
+name: Audit feedback
+description: Feedback on a published EDP audit
+title: "[Audit feedback] "
+body:
+  - type: input
+    id: audit
+    attributes:
+      label: Audit ID
+      description: Example: dpolens-beta-001
+      placeholder: dpolens-beta-001
+    validations:
+      required: true
+
+  - type: textarea
+    id: already_known
+    attributes:
+      label: What was already known?
+      description: Which findings or patterns were already known before reading the audit?
+
+  - type: textarea
+    id: new_not_useful
+    attributes:
+      label: What was new but not useful?
+      description: New observations that would not change your next step.
+
+  - type: textarea
+    id: new_useful
+    attributes:
+      label: What was new and useful?
+      description: Anything that made a debugging or evaluation decision clearer.
+
+  - type: textarea
+    id: incorrect
+    attributes:
+      label: Incorrect interpretation
+      description: Did the audit misunderstand any source-system semantics?
+
+  - type: textarea
+    id: time_saved
+    attributes:
+      label: Would this save time?
+      description: Would this audit materially reduce debugging or evaluation effort?
+
+  - type: textarea
+    id: paid
+    attributes:
+      label: What would a paid version require?
+      description: What additional evidence or output would make this worth paying for?
+
+  - type: checkboxes
+    id: permission
+    attributes:
+      label: Feedback handling
+      options:
+        - label: This feedback may be referenced publicly in the audit registry.
+          required: false
