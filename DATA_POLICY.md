@@ -2,13 +2,19 @@
 
 ## Public repository scope
 
-This repository is a delivery registry, not a raw-data dump.
+This repository is the public delivery and review layer for EDP audits. It is **not** a raw-data store and is separate from the EDP research runtime/laboratory repositories.
 
 Public audit folders may contain only material that is:
 
 - already public;
 - explicitly authorized for publication; or
 - sanitized so publication does not expose private client information.
+
+## Minimum-necessary principle
+
+Private engagements should use the smallest authorized export needed to evaluate the agreed retrieval/RAG question.
+
+An audit should not request infrastructure credentials, model weights, or broad production access when fixed retrieval/evaluation artifacts are sufficient.
 
 ## Do not publish by default
 
@@ -19,7 +25,14 @@ Do not place the following in this public repository unless publication is expli
 - proprietary corpus text;
 - private traces or logs;
 - personal or confidential information;
+- raw conversation exports;
 - internal infrastructure details that are not required to understand the audit.
+
+## Research-repository separation
+
+Client audit material should not be moved into `edp_v5` or `lab_edp` merely because those repositories contain related research tooling.
+
+Public client delivery belongs here in `edp-audits`; private working evidence should remain in the authorized engagement workspace.
 
 ## Public evidence
 
