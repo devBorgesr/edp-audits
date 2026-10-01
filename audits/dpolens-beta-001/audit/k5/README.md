@@ -1,6 +1,7 @@
-# K=5 audit artifacts
+# K=5 generated audit output
 
-The validated local audit completed successfully.
+**Execution status:** complete and validated locally.  
+**Public mirror status:** pending exact file copy from the validated delivery package.
 
 Key values:
 
@@ -12,4 +13,10 @@ Key values:
 - strict Recall: not claimed
 - strict nDCG: not claimed
 
-The generated `report.md`, `manifest.json`, and `results.json` are intentionally not reconstructed from prose. They should be copied here byte-for-byte from the validated delivery package before this audit is marked fully mirrored on GitHub.
+The canonical generated files are:
+
+- `report.md`
+- `manifest.json`
+- `results.json`
+
+They are intentionally **not reconstructed from narrative text**. The public mirror should receive the validated bytes from the original delivery package so hashes and provenance remain meaningful.
