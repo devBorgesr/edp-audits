@@ -1,10 +1,20 @@
 # Methodology and boundaries — DPOLens Beta Audit #001
 
-## Source
+## Source and access
 
-Public DPOLens repository snapshot:
+Public DPOLens repository snapshot audited:
 
 `f1cddb56835cef31c4092d99e45e49383e425bf4`
+
+This beta used public repository/evaluation material only. No credentials, private client data, or production-system access were required.
+
+## Historical reproduction boundary
+
+The upstream published benchmark was associated with an earlier repository commit. The audit reproduction was performed on the snapshot listed above.
+
+The reproduced baseline aggregate matches the published aggregate, but the audit does **not** claim byte-for-byte historical reproduction of the earlier commit.
+
+The rerank25 rankings used for the candidate comparison were captured with a custom runner against the repository's reranker implementation. This is not claimed as native CLI reranker parity.
 
 ## Evaluation population
 
@@ -20,7 +30,13 @@ Public DPOLens repository snapshot:
 
 Baseline retrieval followed by `jina-reranker-v2-base-multilingual` at depth 25.
 
-## Relevance semantics
+## Upstream metric semantics
+
+DPOLens accepts an expected clause or one of its descendants as a hit.
+
+Its reported “Recall@k” is therefore a binary per-query hit-rate under that source-system rule. It should not be conflated with EDP strict Recall.
+
+## EDP relevance semantics
 
 Judgments were mechanically derived from the public DPOLens held-out `expected_keys` using the upstream exact-or-descendant acceptance rule.
 
@@ -30,7 +46,7 @@ The reference is explicitly non-exhaustive.
 
 Therefore:
 
-- strict precision and strict MRR can be reported for the explicitly judged returned items;
+- strict precision and strict MRR are reported under the EDP explicit-reference protocol;
 - strict Recall and strict nDCG are not claimed.
 
 ## Forensic method
@@ -50,7 +66,7 @@ Duplicate-text groups and ranking regressions are reported as descriptive co-occ
 
 This audit does not claim that duplicate text caused the regression.
 
-A causal claim would require a predefined intervention, such as deduplicating or collapsing equivalent retrieval units and rerunning the same evaluation.
+A causal claim would require a predefined intervention, such as deduplicating or collapsing equivalent retrieval units before reranking and rerunning the same evaluation.
 
 ## Not evaluated
 
@@ -63,10 +79,13 @@ This audit does not establish:
 - production impact;
 - financial impact;
 - exhaustive retrieval recall;
-- root cause.
+- root cause;
+- statistical generalization beyond this supplied 30-query set.
 
-## Template note
+## Generated-report note
 
-The original generated EDP report contains a generic K=1 / positive-only warning even though this case was evaluated at K=5 and K=10. It is treated as renderer boilerplate and does not affect the calculations or interpretation in this audit.
+The original generated EDP report contains a generic K=1 / positive-only warning even though this case was evaluated at K=5 and K=10. It is renderer boilerplate and does not affect the calculations or interpretation in this audit.
+
+The generated reports are preserved unchanged; this methodology document records the clarification rather than rewriting historical output.
 
 Severity labels are auditor-assigned judgments, not measured metrics.
