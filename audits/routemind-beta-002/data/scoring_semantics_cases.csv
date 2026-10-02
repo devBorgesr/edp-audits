@@ -1,0 +1,16 @@
+dataset,query_id,arm,lever,family,needs,d_true,stored_retrieval_hit,gold_semantic_hit,stored_rank,satisfied_requirements,missing_requirements,matched_alternatives
+temporal,t-perdiem-11,rag,both,perdiem,all,"[""overseas-rates"",""hard-perdiem-v2""]",true,false,1,"[""hard-perdiem-v2""]","[""overseas-rates""]",[]
+temporal,t-perdiem-12,rag,both,perdiem,all,"[""overseas-rates"",""hard-perdiem-v2""]",true,false,1,"[""hard-perdiem-v2""]","[""overseas-rates""]",[]
+temporal,t-overtime-11,rag,both,overtime,all,"[""overtime-rate-table"",""hard-overtime-v2""]",true,false,1,"[""hard-overtime-v2""]","[""overtime-rate-table""]",[]
+temporal,t-overtime-12,rag,both,overtime,all,"[""overtime-rate-table"",""hard-overtime-v2""]",true,false,2,"[""hard-overtime-v2""]","[""overtime-rate-table""]",[]
+temporal,t-accrual-03,rag,stale-old,accrual,any,"[""leave-accrual""]",false,true,,"[""leave-accrual""]",[],"[""leave-accrual->accrual-rule""]"
+temporal,t-accrual-12,rag,both,accrual,all,"[""leave-accrual"",""hard-accrual-v2""]",true,false,2,"[""hard-accrual-v2""]","[""leave-accrual""]",[]
+temporal,t-threshold-11,rag,both,threshold,all,"[""threshold-table"",""hard-threshold-v2""]",true,false,1,"[""hard-threshold-v2""]","[""threshold-table""]",[]
+temporal,t-diligence-11,rag,both,diligence,all,"[""supplier-due-diligence"",""hard-diligence-v2""]",true,false,2,"[""hard-diligence-v2""]","[""supplier-due-diligence""]",[]
+temporal,t-perdiem-11,rag+rerank,both,perdiem,all,"[""overseas-rates"",""hard-perdiem-v2""]",true,false,1,"[""hard-perdiem-v2""]","[""overseas-rates""]",[]
+temporal,t-perdiem-12,rag+rerank,both,perdiem,all,"[""overseas-rates"",""hard-perdiem-v2""]",true,false,1,"[""hard-perdiem-v2""]","[""overseas-rates""]",[]
+temporal,t-overtime-11,rag+rerank,both,overtime,all,"[""overtime-rate-table"",""hard-overtime-v2""]",true,false,1,"[""hard-overtime-v2""]","[""overtime-rate-table""]",[]
+temporal,t-overtime-12,rag+rerank,both,overtime,all,"[""overtime-rate-table"",""hard-overtime-v2""]",true,false,2,"[""hard-overtime-v2""]","[""overtime-rate-table""]",[]
+temporal,t-accrual-12,rag+rerank,both,accrual,all,"[""leave-accrual"",""hard-accrual-v2""]",true,false,1,"[""hard-accrual-v2""]","[""leave-accrual""]",[]
+temporal,t-threshold-11,rag+rerank,both,threshold,all,"[""threshold-table"",""hard-threshold-v2""]",true,false,2,"[""hard-threshold-v2""]","[""threshold-table""]",[]
+temporal,t-diligence-11,rag+rerank,both,diligence,all,"[""supplier-due-diligence"",""hard-diligence-v2""]",true,false,1,"[""hard-diligence-v2""]","[""supplier-due-diligence""]",[]
