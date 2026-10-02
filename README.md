@@ -41,6 +41,7 @@ See [DATA_POLICY.md](DATA_POLICY.md).
 | Audit | System | Status | Scope |
 |---|---|---|---|
 | [DPOLens Beta #001](audits/dpolens-beta-001/README.md) | DPOLens | Technical audit complete — beta feedback pending | Retrieval + reranker |
+| [RouteMind Beta #002](audits/routemind-beta-002/README.md) | RouteMind | Technical audit complete — client feedback pending | Retrieval + reranker scoring semantics |
 
 ## Evidence labels
 
