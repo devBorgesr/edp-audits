@@ -1,0 +1,4 @@
+audit=routemind-beta-002
+created_utc=2026-10-02T04:57:22Z
+evaluation_snapshot=96be88fb94d3f50787bfe59683fb1938c134a025
+corpus_snapshot=4b26b3b68ba3168ebb5cc1087e0935c6d513d091
