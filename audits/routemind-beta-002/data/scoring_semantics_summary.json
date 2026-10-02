@@ -1,0 +1,77 @@
+{
+  "audit": "routemind-beta-002",
+  "evaluation_snapshot": "96be88fb94d3f50787bfe59683fb1938c134a025",
+  "evaluated_query_arm_rows": 1400,
+  "semantic_mismatches": 15,
+  "mismatch_shape": {
+    "stored_hit_to_incomplete_needs_all": 14,
+    "stored_miss_to_satisfied_via_d_alt": 1
+  },
+  "groups": [
+    {
+      "population": "all_700",
+      "arm": "rag",
+      "n": 700,
+      "stored_hits": 361,
+      "stored_rate": 0.5157142857142857,
+      "gold_semantic_hits": 355,
+      "gold_semantic_rate": 0.5071428571428571,
+      "delta_hits": -6
+    },
+    {
+      "population": "all_700",
+      "arm": "rag+rerank",
+      "n": 700,
+      "stored_hits": 379,
+      "stored_rate": 0.5414285714285715,
+      "gold_semantic_hits": 372,
+      "gold_semantic_rate": 0.5314285714285715,
+      "delta_hits": -7
+    },
+    {
+      "population": "temporal_60",
+      "arm": "rag",
+      "n": 60,
+      "stored_hits": 35,
+      "stored_rate": 0.5833333333333334,
+      "gold_semantic_hits": 29,
+      "gold_semantic_rate": 0.48333333333333334,
+      "delta_hits": -6
+    },
+    {
+      "population": "temporal_60",
+      "arm": "rag+rerank",
+      "n": 60,
+      "stored_hits": 37,
+      "stored_rate": 0.6166666666666667,
+      "gold_semantic_hits": 30,
+      "gold_semantic_rate": 0.5,
+      "delta_hits": -7
+    },
+    {
+      "population": "both_needs_all_10",
+      "arm": "rag",
+      "n": 10,
+      "stored_hits": 8,
+      "stored_rate": 0.8,
+      "gold_semantic_hits": 1,
+      "gold_semantic_rate": 0.1,
+      "delta_hits": -7
+    },
+    {
+      "population": "both_needs_all_10",
+      "arm": "rag+rerank",
+      "n": 10,
+      "stored_hits": 8,
+      "stored_rate": 0.8,
+      "gold_semantic_hits": 1,
+      "gold_semantic_rate": 0.1,
+      "delta_hits": -7
+    }
+  ],
+  "reranker_delta_pp": {
+    "stored": 2.571428571428571,
+    "gold_semantic": 2.4285714285714284
+  },
+  "interpretation": "Metric-contract / comparability discrepancy; not labeled a confirmed implementation bug pending maintainer intent."
+}
