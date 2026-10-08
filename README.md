@@ -38,10 +38,10 @@ See [DATA_POLICY.md](DATA_POLICY.md).
 
 ## Audit registry
 
-| Audit | System | Status | Scope |
-|---|---|---|---|
-| [DPOLens Beta #001](audits/dpolens-beta-001/README.md) | DPOLens | Technical audit complete — beta feedback pending | Retrieval + reranker |
-| [RouteMind Beta #002](audits/routemind-beta-002/README.md) | RouteMind | Technical audit complete — client feedback pending | Retrieval + reranker scoring semantics |
+| Audit | System | Audit status | Maintainer review | Scope |
+|---|---|---|---|---|
+| [DPOLens Beta #001](audits/dpolens-beta-001/README.md) | DPOLens | Complete | Requested; delivery acknowledged; no substantive post-audit review received as of 2026-10-08 | Retrieval + reranker |
+| [RouteMind Beta #002](audits/routemind-beta-002/README.md) | RouteMind | Complete | Requested; no substantive post-audit review received as of 2026-10-08 | Retrieval + reranker scoring semantics |
 
 ## Evidence labels
 
@@ -66,4 +66,6 @@ Published audit artifacts are not silently rewritten. Material corrections shoul
 
 ## Feedback
 
-Each audit has its own feedback page. Beta feedback is used to test whether the audit surfaced useful information beyond what the system owner already knew.
+Maintainer review is tracked separately from audit completion. If no substantive post-audit review is received, the audit remains complete and the review status is recorded explicitly. Lack of maintainer feedback is not treated as endorsement or rejection of the findings.
+
+Each audit can still keep a feedback path open for later corrections or usefulness validation.

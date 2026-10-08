@@ -1,5 +1,9 @@
 # Beta feedback — DPOLens Audit #001
 
+**Maintainer review status:** requested; delivery acknowledged; no substantive post-audit review received as of 2026-10-08.
+
+This feedback path remains open for later corrections or usefulness validation.
+
 Thank you for allowing an independent review of the public DPOLens retrieval artifacts.
 
 The audit intentionally does **not** present “the reranker performs worse” as a new discovery. That aggregate behavior was already documented upstream.

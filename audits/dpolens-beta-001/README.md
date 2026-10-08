@@ -1,6 +1,7 @@
 # DPOLens — EDP Beta Audit #001
 
-**Status:** Technical analysis complete — beta feedback pending  
+**Status:** Technical audit complete  
+**Maintainer review:** requested; delivery acknowledged; no substantive post-audit review received as of 2026-10-08  
 **Publication status:** narrative + forensic summary published; exact machine-generated K=5/K=10 outputs and checksum file still need to be mirrored byte-for-byte from the validated delivery package before this page is treated as the final public package.  
 **Scope:** retrieval + reranker  
 **Source snapshot audited:** `f1cddb56835cef31c4092d99e45e49383e425bf4`  

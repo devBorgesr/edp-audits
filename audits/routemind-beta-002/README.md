@@ -1,7 +1,8 @@
 # RouteMind — Independent Retrieval / Reranking Regression Audit
 ## Beta #002
 
-**Status:** Technical audit complete — client feedback pending  
+**Status:** Technical audit complete  
+**Maintainer review:** requested; no substantive post-audit review received as of 2026-10-08  
 **Audit type:** Independent Retrieval / Reranking Regression Audit  
 **Evaluation snapshot:** `96be88fb94d3f50787bfe59683fb1938c134a025`  
 **Corpus snapshot used for historical content inspection:** `4b26b3b68ba3168ebb5cc1087e0935c6d513d091`  
@@ -80,7 +81,9 @@ The history does document `needs: all` and per-entry `D_alt` semantics for the w
 - [Machine-readable mismatch cases](data/scoring_semantics_cases.csv)
 - [Machine-readable summary](data/scoring_semantics_summary.json)
 
-## Client feedback requested
+## Maintainer review requested
+
+No substantive post-audit review has been received as of 2026-10-08. The questions below remain open if the maintainer chooses to respond later.
 
 The primary validation question is:
 
