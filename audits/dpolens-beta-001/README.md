@@ -89,3 +89,9 @@ The public mirror must copy those files **byte-for-byte** rather than reconstruc
 **Hypothesis:** a suggested follow-up experiment. A hypothesis is not presented as a demonstrated cause.
 
 **Not claimed:** legal correctness, downstream generation quality, production impact, exhaustive retrieval recall, exhaustive nDCG, or root cause.
+
+## Discuss this audit
+
+Technical corrections, reproduction attempts, questions about the methodology, and later maintainer feedback are welcome.
+
+**Reddit:** [u/No_Ranger_9788](https://www.reddit.com/user/No_Ranger_9788/)

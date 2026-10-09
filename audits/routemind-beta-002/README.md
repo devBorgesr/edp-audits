@@ -94,3 +94,9 @@ A second validation question is:
 > If you had another retrieval/reranking change to investigate, would an external audit at this level of query-level and scoring-contract analysis be useful again?
 
 Corrective or negative feedback is welcome. This beta is specifically testing whether the audit adds useful evidence beyond what the system owner already knew.
+
+## Discuss this audit
+
+Technical corrections, reproduction attempts, questions about the methodology, and later maintainer feedback are welcome.
+
+**Reddit:** [u/No_Ranger_9788](https://www.reddit.com/user/No_Ranger_9788/)
