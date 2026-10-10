@@ -1,6 +1,7 @@
 # F-RM-01 — Retrieval scoring contract vs. gold completeness semantics
 
-**Status:** Candidate audit finding — independently reproduced; owner intent pending.
+**Status (2026-10-02 original):** Candidate audit finding — independently reproduced; owner intent pending.  
+**Status (2026-10-10 review):** **Confirmed scoring-contract discrepancy**, reproduced by RouteMind maintainer and addressed in project code/docs. See [maintainer review](MAINTAINER_FEEDBACK_2026-10-10.md).
 
 ## Evidence chain
 
@@ -53,7 +54,7 @@ Under the per-entry alternative semantics used by the walk scorer, this case bec
 
 This matters because the reinterpretation is not simply a stricter rule that lowers every metric; it corrects cases in both directions.
 
-## Classification
+## Classification at initial publication (2026-10-02)
 
 Do **not** report this as a confirmed implementation bug without maintainer confirmation.
 
@@ -74,3 +75,13 @@ Expose both concepts explicitly:
 This preserves the existing retrieval metric while making answer-completeness semantics directly measurable.
 
 No corrected MRR is claimed here because multi-document rank semantics must be specified separately.
+
+## Post-publication addendum — 2026-10-10
+
+[CSP911 confirmed](https://github.com/CSP911/routemind/issues/2#issuecomment-6096856584) the metric-contract asymmetry was not previously known or intentional and independently reproduced the same 15 rows, group counts, reranker delta and matching SHA-256s. The finding is **confirmed as a cross-arm scoring comparability discrepancy**; this is not a claim that the retrieval model itself regressed or that every response is correct/incorrect.
+
+**Reframed materiality:** The original audit emphasized that the within-retrieval reranker delta remains similar, but the bigger consequence was an invalid like-for-like comparison in RouteMind's headline retrieval-versus-walk table: retrieval `hit@10` and walk completeness had been calculated with different evidence requirements. The maintainer explicitly identified this underweighting as critical feedback.
+
+**Resolution:** [RouteMind commit `5d8bf45`](https://github.com/CSP911/routemind/commit/5d8bf455356df098c989ae71412d30a9b60e14fe) revises overall reported retrieval values from `0.516/0.541` to `0.507/0.531`, retains the routing/walk rate `0.999`, adds `retrieval_complete` alongside `retrieval_hit`, and asserts the corrected summary in `bench/attribution.py`. Historical saved runs were not rewritten.
+
+The original 2026-10-02 evidence and recommendation remain visible above as historical record. Full feedback and boundaries: [MAINTAINER_FEEDBACK_2026-10-10.md](MAINTAINER_FEEDBACK_2026-10-10.md).
