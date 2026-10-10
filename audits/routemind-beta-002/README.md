@@ -1,12 +1,13 @@
 # RouteMind — Independent Retrieval / Reranking Regression Audit
 ## Beta #002
 
-**Status:** Technical audit complete  
-**Maintainer review:** requested; no substantive post-audit review received as of 2026-10-08  
+**Status:** Technical audit complete; F-RM-01 confirmed by maintainer (2026-10-10)  
+**Maintainer review:** received; independently reproduced and acted upon ([review](https://github.com/CSP911/routemind/issues/2#issuecomment-6096856584))  
 **Audit type:** Independent Retrieval / Reranking Regression Audit  
 **Evaluation snapshot:** `96be88fb94d3f50787bfe59683fb1938c134a025`  
 **Corpus snapshot used for historical content inspection:** `4b26b3b68ba3168ebb5cc1087e0935c6d513d091`  
-**Audit date:** 2026-10-02
+**Audit date:** 2026-10-02  
+**Post-publication update:** 2026-10-10 (maintainer confirmation and impact addendum; frozen inputs unchanged)
 
 ## Executive summary
 
@@ -22,7 +23,7 @@ Reproduced controls:
 
 Those values are treated as **known context, not new findings**.
 
-The main additional result is a scoring-contract discrepancy on multi-document temporal questions.
+The main additional result is a scoring-contract discrepancy on multi-document temporal questions. **As confirmed by the maintainer on 2026-10-10, its most consequential effect was the unfair headline comparison of retrieval with routing walks scored under a different completeness contract.** See the [dated maintainer review](MAINTAINER_FEEDBACK_2026-10-10.md).
 
 ## Main finding — F-RM-01
 
@@ -48,7 +49,7 @@ The aggregate reranker direction remains stable:
 - Stored delta: +18/700 = **+2.57 percentage points**
 - Gold-semantic reinterpretation: +17/700 = **+2.43 percentage points**
 
-So this finding does **not** invalidate the project's aggregate reranker conclusion.
+So this finding does **not** invalidate the project's aggregate reranker conclusion. **However, the original headline retrieval-versus-walk comparison was not like-for-like.** The maintainer corrected that reporting in [commit `5d8bf45`](https://github.com/CSP911/routemind/commit/5d8bf455356df098c989ae71412d30a9b60e14fe): overall RAG **0.516 → 0.507**, RAG + rerank **0.541 → 0.531**, with walks **0.999**. The retrieval pipeline did not become worse; the comparison changed to a common scoring contract.
 
 ## Interpretation boundary
 
@@ -62,7 +63,7 @@ At the same time:
 - `bench/walkscore.py` explicitly states that `needs: all` requires both documents.
 - `walkscore.py` applies `D_alt`, while the retrieval scorer does not.
 
-The result is therefore best described as a **metric-contract / comparability discrepancy** until the intended contract is confirmed by the project owner.
+At initial publication (2026-10-02), the result was appropriately classified as a **metric-contract / comparability discrepancy pending maintainer intent**. On 2026-10-10 the maintainer confirmed that the asymmetry was **not intentional or previously recognized**, reproduced the 15 cases and updated the project. This confirms the discrepancy; it is **not** a claim about production answer quality.
 
 ## Final novelty check
 
@@ -75,25 +76,20 @@ The history does document `needs: all` and per-entry `D_alt` semantics for the w
 ## Files
 
 - [F-RM-01 — detailed finding](FINDING_F_RM_01.md)
+- [Maintainer feedback and post-publication resolution (2026-10-10)](MAINTAINER_FEEDBACK_2026-10-10.md)
 - [Reproducibility and frozen inputs](REPRODUCIBILITY.md)
 - [Audit scope](AUDIT_SCOPE.txt)
 - [Input SHA-256](INPUT_SHA256.txt)
 - [Machine-readable mismatch cases](data/scoring_semantics_cases.csv)
 - [Machine-readable summary](data/scoring_semantics_summary.json)
 
-## Maintainer review requested
+## Maintainer review — received 2026-10-10
 
-No substantive post-audit review has been received as of 2026-10-08. The questions below remain open if the maintainer chooses to respond later.
+CSP911 [responded publicly](https://github.com/CSP911/routemind/issues/2#issuecomment-6096856584): the distinction was **neither known nor intentional**; the maintainer independently reproduced the 15 divergences, the summary counts and the input hashes. The finding was incorporated into [commit `5d8bf45`](https://github.com/CSP911/routemind/commit/5d8bf455356df098c989ae71412d30a9b60e14fe), which aligns the headline comparison, adds `retrieval_complete` without changing historical `retrieval_hit`, and introduces reproducibility checks.
 
-The primary validation question is:
+**Corrective feedback:** The EDP executive framing focused on the near-unchanged reranker delta, underplaying the more important cross-arm comparability problem between retrieval and walks. This criticism is accepted and recorded in the [dated review note](MAINTAINER_FEEDBACK_2026-10-10.md). The original CSV/JSON results and frozen-input checksums remain untouched.
 
-> Was the difference between retrieval `hit@10` and `needs: all` completeness intentional and already known, or did this audit surface a distinction you would want to change or document?
-
-A second validation question is:
-
-> If you had another retrieval/reranking change to investigate, would an external audit at this level of query-level and scoring-contract analysis be useful again?
-
-Corrective or negative feedback is welcome. This beta is specifically testing whether the audit adds useful evidence beyond what the system owner already knew.
+**Outcome:** independently confirmed F-RM-01 with a maintainer-verified project change; **not** a paid engagement or an endorsement of every possible EDP claim.
 
 ## Discuss this audit
 
