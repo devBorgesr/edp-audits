@@ -83,7 +83,7 @@ See [DATA_POLICY.md](DATA_POLICY.md).
 | Audit | System | Audit status | Maintainer review | Scope |
 |---|---|---|---|---|
 | [DPOLens Beta #001](audits/dpolens-beta-001/README.md) | DPOLens | Complete | Requested; delivery acknowledged; no substantive post-audit review received as of 2026-10-08 | Retrieval + reranker |
-| [RouteMind Beta #002](audits/routemind-beta-002/README.md) | RouteMind | Complete | Requested; no substantive post-audit review received as of 2026-10-08 | Retrieval + reranker scoring semantics |
+| [RouteMind Beta #002](audits/routemind-beta-002/README.md) | RouteMind | Complete; **F-RM-01 confirmed** | **Received 2026-10-10**: reproduced by maintainer; [finding incorporated in code](https://github.com/CSP911/routemind/commit/5d8bf455356df098c989ae71412d30a9b60e14fe) | Retrieval + reranker scoring semantics; cross-arm comparability |
 
 ## Evidence labels
 
