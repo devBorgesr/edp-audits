@@ -6,6 +6,12 @@ This is the **client-facing delivery and review repository** for EDP audits. It 
 
 The goal is not to produce another aggregate score. The goal is to determine **which queries changed, what evidence changed, whether the regression matters, and what the available artifacts actually support**.
 
+## Buyer-facing audit sample
+
+**[RouteMind - concise sample audit report](samples/ROUTEMIND_BUYER_SAMPLE.md)** explains the previously unknown scoring-contract mismatch, query-level proof, measured impact, maintainer-verified correction, and what the evidence does **not** establish. It is a presentation of the completed **public beta audit**, not a new analysis, a paid engagement, or a third-party commercial endorsement.
+
+**Fixed-scope paid offering being tested:** up to 30 queries and 2 comparable retrieval configurations, using authorized, compatible exports; $400 with a seven-day delivery target after inputs are ready and a fit check is complete. The larger RouteMind beta case is evidence of methodology, not the scope included in that price.
+
 ## Typical use cases
 
 An EDP audit is most useful when:
